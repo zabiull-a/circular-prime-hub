@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "E waste" },
+      { name: "description", content: "Enterprise-grade website for IT asset recovery and e-waste management." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "E waste" },
+      { property: "og:description", content: "Enterprise-grade website for IT asset recovery and e-waste management." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "E waste" },
+      { name: "twitter:description", content: "Enterprise-grade website for IT asset recovery and e-waste management." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1c03d2e4-cb1a-4cbf-a475-557375471c85/id-preview-7f9b82d8--bbf7a6b8-84a3-4016-9e85-b3001b6a4641.lovable.app-1781631759500.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1c03d2e4-cb1a-4cbf-a475-557375471c85/id-preview-7f9b82d8--bbf7a6b8-84a3-4016-9e85-b3001b6a4641.lovable.app-1781631759500.png" },
     ],
     links: [
       {
