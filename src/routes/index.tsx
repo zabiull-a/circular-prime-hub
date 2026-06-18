@@ -396,7 +396,7 @@ function Services() {
             </h2>
           </div>
           <p className="text-base leading-relaxed text-white/70">
-            Eight integrated services, one accountable partner. Whether you're refreshing
+            Seven integrated services, one accountable partner. Whether you're refreshing
             500 laptops or decommissioning an entire data center, we manage every step —
             asset recovery, secure data destruction, compliant recycling and ESG reporting.
           </p>
