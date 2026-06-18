@@ -38,7 +38,7 @@ export function SiteHeader() {
             <Leaf className="h-4 w-4" />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-base font-bold text-charcoal">VertGreen</span>
+            <span className="font-display text-base font-bold text-charcoal">E-Waste Buyers</span>
             <span className="text-[10px] font-medium tracking-[0.18em] text-muted-foreground uppercase">
               Asset Recovery
             </span>

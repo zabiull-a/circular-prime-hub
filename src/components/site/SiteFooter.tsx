@@ -11,7 +11,7 @@ export function SiteFooter() {
                 <Leaf className="h-4 w-4" />
               </span>
               <span className="flex flex-col leading-none">
-                <span className="font-display text-base font-bold">VertGreen</span>
+                <span className="font-display text-base font-bold">E-Waste Buyers</span>
                 <span className="text-[10px] font-medium tracking-[0.18em] text-white/60 uppercase">
                   Asset Recovery
                 </span>
@@ -82,7 +82,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} VertGreen Asset Recovery Pvt. Ltd. All rights reserved. CIN: U37100HR2018PTC000000</p>
+          <p>© {new Date().getFullYear()} E-Waste Buyers Pvt. Ltd. All rights reserved. CIN: U37100HR2018PTC000000</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Terms of Service</a>
