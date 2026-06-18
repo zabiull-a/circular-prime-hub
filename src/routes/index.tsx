@@ -378,7 +378,6 @@ const services = [
   { icon: HardDrive, title: "IT Asset Recovery", desc: "Maximize returns from retired enterprise hardware through resale, refurbishment and component recovery." },
   { icon: Truck, title: "E-Waste Collection & Disposal", desc: "Nationwide collection with environmentally responsible recycling at CPCB-authorised facilities." },
   { icon: Lock, title: "Secure Data Destruction", desc: "On-site or off-site hard drive shredding, degaussing and NIST 800-88 wiping with video proof." },
-  { icon: Globe2, title: "Reverse Logistics", desc: "Multi-location asset collection and consolidation across India with GPS-tracked vehicles." },
   { icon: FileCheck2, title: "Compliance Documentation", desc: "Audit-ready Form-6/9, recycling certificates and complete chain-of-custody reporting." },
   { icon: Leaf, title: "ESG & Sustainability Support", desc: "Carbon offset reports, ESG metrics, and disclosure-ready environmental impact data." },
   { icon: Server, title: "Data Center Decommissioning", desc: "Turnkey rack-to-truck retirement with project management, packing and serialised tracking." },
