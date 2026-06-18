@@ -4,12 +4,12 @@ import { Menu, X, Leaf, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const nav = [
-  { label: "Industries", href: "#industries" },
-  { label: "Assets", href: "#assets" },
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "Compliance", href: "#compliance" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", to: "/services" as const },
+  { label: "Industries", to: "/industries" as const },
+  { label: "Compliance", to: "/compliance" as const },
+  { label: "Case Studies", to: "/case-studies" as const },
+  { label: "About Us", to: "/about" as const },
+  { label: "Contact", to: "/contact" as const },
 ];
 
 export function SiteHeader() {
@@ -45,15 +45,16 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {nav.map((n) => (
-            <a
-              key={n.href}
-              href={n.href}
+            <Link
+              key={n.to}
+              to={n.to}
               className="text-sm font-medium text-charcoal/80 transition-colors hover:text-forest"
+              activeProps={{ className: "text-forest" }}
             >
               {n.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -65,12 +66,13 @@ export function SiteHeader() {
             <Phone className="h-4 w-4 text-forest" />
             +91 98801 12263
           </a>
-          <a
-            href="#quote"
+          <Link
+            to="/contact"
+            hash="quote"
             className="inline-flex h-10 items-center justify-center rounded-md bg-forest px-5 text-sm font-semibold text-forest-foreground shadow-sm transition-all hover:bg-forest/90 hover:shadow"
           >
             Request Quote
-          </a>
+          </Link>
         </div>
 
         <button
@@ -86,22 +88,23 @@ export function SiteHeader() {
         <div className="border-t border-border bg-background lg:hidden">
           <div className="container-px mx-auto flex max-w-7xl flex-col gap-1 py-4">
             {nav.map((n) => (
-              <a
-                key={n.href}
-                href={n.href}
+              <Link
+                key={n.to}
+                to={n.to}
                 onClick={() => setOpen(false)}
                 className="rounded-md px-3 py-2.5 text-sm font-medium text-charcoal hover:bg-muted"
               >
                 {n.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#quote"
+            <Link
+              to="/contact"
+              hash="quote"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex h-11 items-center justify-center rounded-md bg-forest text-sm font-semibold text-forest-foreground"
             >
-              Request Corporate Quote
-            </a>
+              Request Quote
+            </Link>
           </div>
         </div>
       )}

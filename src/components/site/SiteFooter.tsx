@@ -1,4 +1,25 @@
+import { Link } from "@tanstack/react-router";
 import { Leaf, Mail, MapPin, Phone, Linkedin, Twitter, Facebook } from "lucide-react";
+import { EMAIL, PHONE, PHONE_TEL } from "@/lib/site-data";
+
+const serviceLinks = [
+  "IT Asset Recovery",
+  "Secure Data Destruction",
+  "E-Waste Collection",
+  "Data Center Decommissioning",
+  "Reverse Logistics",
+  "Enterprise Buyback",
+];
+
+const companyLinks: { label: string; to: "/services" | "/industries" | "/compliance" | "/case-studies" | "/about" | "/faq" | "/contact" }[] = [
+  { label: "Services", to: "/services" },
+  { label: "Industries", to: "/industries" },
+  { label: "Compliance", to: "/compliance" },
+  { label: "Case Studies", to: "/case-studies" },
+  { label: "About Us", to: "/about" },
+  { label: "FAQ", to: "/faq" },
+  { label: "Contact", to: "/contact" },
+];
 
 export function SiteFooter() {
   return (
@@ -19,8 +40,7 @@ export function SiteFooter() {
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
               India's trusted partner for corporate e-waste disposal, IT asset recovery,
-              secure data destruction, and data center decommissioning. Authorised under CPCB,
-              audit-ready compliance documentation, nationwide reverse logistics.
+              secure data destruction, and data center decommissioning.
             </p>
             <div className="mt-6 flex gap-3">
               {[Linkedin, Twitter, Facebook].map((Icon, i) => (
@@ -35,28 +55,27 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <FooterCol
-            title="Services"
-            links={[
-              "IT Asset Recovery",
-              "E-Waste Collection",
-              "Data Destruction",
-              "Reverse Logistics",
-              "Compliance Reports",
-              "Data Center Decommissioning",
-            ]}
-          />
-          <FooterCol
-            title="Industries"
-            links={[
-              "IT & SaaS",
-              "Data Centers",
-              "Manufacturing",
-              "BFSI",
-              "Healthcare",
-              "Government",
-            ]}
-          />
+          <div>
+            <h4 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-white">Services</h4>
+            <ul className="mt-5 space-y-3 text-sm text-white/70">
+              {serviceLinks.map((l) => (
+                <li key={l}>
+                  <Link to="/services" className="transition-colors hover:text-white">{l}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-white">Company</h4>
+            <ul className="mt-5 space-y-3 text-sm text-white/70">
+              {companyLinks.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="transition-colors hover:text-white">{l.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div>
             <h4 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-white">
@@ -69,44 +88,25 @@ export function SiteFooter() {
               </li>
               <li className="flex gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-forest" />
-                <a href="tel:+919880112263" className="hover:text-white">+91 98801 12263</a>
+                <a href={`tel:${PHONE_TEL}`} className="hover:text-white">{PHONE}</a>
               </li>
               <li className="flex gap-3">
                 <Mail className="h-4 w-4 shrink-0 text-forest" />
-                <a href="mailto:enterprise@vertgreen.in" className="hover:text-white">
-                  enterprise@vertgreen.in
-                </a>
+                <a href={`mailto:${EMAIL}`} className="hover:text-white">{EMAIL}</a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} E-Waste Buyers Pvt. Ltd. All rights reserved. CIN: U37100HR2018PTC000000</p>
+          <p>© {new Date().getFullYear()} E-Waste Buyers Pvt. Ltd. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Terms of Service</a>
-            <a href="#" className="hover:text-white">Compliance</a>
+            <Link to="/compliance" className="hover:text-white">Compliance</Link>
           </div>
         </div>
       </div>
     </footer>
-  );
-}
-
-function FooterCol({ title, links }: { title: string; links: string[] }) {
-  return (
-    <div>
-      <h4 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-white">
-        {title}
-      </h4>
-      <ul className="mt-5 space-y-3 text-sm text-white/70">
-        {links.map((l) => (
-          <li key={l}>
-            <a href="#" className="transition-colors hover:text-white">{l}</a>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
